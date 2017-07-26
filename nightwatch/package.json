@@ -1,0 +1,10 @@
+{
+  "name": "pet-e2e-testing",
+  "private": true,
+  "version": "0.0.0",
+  "main": "globals.js",
+  "dependencies": {
+    "nightwatch-video-recorder": "1.1.0",
+    "dotenv": "4.0.0"
+  }
+}

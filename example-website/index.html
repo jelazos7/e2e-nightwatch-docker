@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>e2e testing example</title>
+  </head>
+  <body>
+    <h1 id="hello-world">Hello, World!</h1>
+    <form>
+      <label for="your-name">Enter your name</label>
+      <input type="text" id="your-name"/>
+      <button type="button" onclick="changeName()">Submit</button>
+    </form>
+    <script>
+      function changeName() {
+        var yourName = document.getElementById('your-name').value
+        document.getElementById('hello-world').innerHTML = 'Hello, ' + yourName
+      }
+    </script>
+
+</html>

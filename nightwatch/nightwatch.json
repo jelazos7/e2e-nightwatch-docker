@@ -1,0 +1,20 @@
+{
+  "globals_path": "globals.js",
+  "output_folder": "reports",
+  "src_folders": ["specs"],
+  "test_settings": {
+    "default": {
+      "screenshots": {
+        "enabled": true,
+        "on_failure": false,
+        "path": "screenshots"
+      },
+      "videos": {
+        "enabled": true,
+        "delete_on_success": false,
+        "path": "videos"
+      },
+      "selenium_host": "chromedriver"
+    }
+  }
+}

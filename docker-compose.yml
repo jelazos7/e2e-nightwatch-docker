@@ -1,0 +1,22 @@
+version: '2.1'
+services:
+  example-website:
+    image: e2e-demo/example-website
+    build: ./example-website
+  chromedriver:
+    image: blueimp/chromedriver
+    environment:
+      - VNC_ENABLED=true
+      - EXPOSE_X11=true
+  nightwatch:
+    image: e2e-demo/nightwatch
+    build: ./nightwatch
+    depends_on:
+      - chromedriver
+    environment:
+      - WAIT_FOR_HOSTS=example-website:80 chromedriver:4444 chromedriver:6060
+      - LAUNCH_URL=${LAUNCH_URL:-http://example-website}
+    volumes:
+      - ./target/nightwatch/videos:/home/node/videos
+      - ./target/nightwatch/screenshots:/home/node/screenshots
+      - ./target/nightwatch/reports:/home/node/reports
